@@ -4,19 +4,50 @@ import { Footer } from "@/components/site/Footer";
 import customer1 from "@/assets/customer-1.jpg";
 import customer4 from "@/assets/customer-4.jpg";
 
+const aboutLdJson = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About The Puppy Shop Delhi NCR",
+  "description": "Ethical dog breeders and trusted puppy shop in Delhi NCR since 2013 with 15,000+ happy families.",
+  "mainEntity": {
+    "@type": "PetStore",
+    "name": "The Puppy Shop",
+    "url": "https://www.thepuppyshop.store/",
+    "foundingDate": "2013",
+    "areaServed": "Delhi NCR",
+    "description": "Delhi NCR's trusted home for healthy, vaccinated, and vet-checked puppies."
+  }
+};
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us | The Puppy Shop, Delhi NCR" },
+      { title: "About Us | Ethical Dog Breeders & Puppy Shop in Delhi NCR" },
       {
         name: "description",
         content:
-          "The Puppy Shop has helped 15,000+ Delhi NCR families bring home healthy puppies since 2013. Learn about our ethical breeding standards.",
+          "The Puppy Shop has helped 15,000+ Delhi NCR families bring home healthy, KCI registered puppies since 2013. Learn about our 100% ethical breeding standards and lifelong vet support.",
       },
-      { property: "og:title", content: "About Us | The Puppy Shop, Delhi NCR" },
+      {
+        name: "keywords",
+        content:
+          "about the puppy shop, dog breeders Delhi NCR, ethical puppy shop Gurgaon, certified puppy breeders Delhi, pet shop story Delhi",
+      },
+      { property: "og:title", content: "About Us | Ethical Dog Breeders & Puppy Shop in Delhi NCR" },
       {
         property: "og:description",
-        content: "Ethical breeding, vet-checked puppies and lifetime support since 2013.",
+        content: "Ethical breeding, vet-checked puppies, and lifetime support since 2013 in Delhi NCR.",
+      },
+      { property: "og:url", content: "https://www.thepuppyshop.store/about" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://www.thepuppyshop.store/about" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(aboutLdJson),
       },
     ],
   }),

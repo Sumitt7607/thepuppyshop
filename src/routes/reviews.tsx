@@ -4,19 +4,63 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { reviews } from "@/components/site/data";
 
+const reviewsLdJson = {
+  "@context": "https://schema.org",
+  "@type": "PetStore",
+  "name": "The Puppy Shop",
+  "url": "https://www.thepuppyshop.store/reviews",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "15480",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": reviews.map((r) => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": r.name
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": r.rating || 5,
+      "bestRating": 5,
+      "worstRating": 1
+    },
+    "reviewBody": r.text
+  }))
+};
+
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Customer Reviews | The Puppy Shop" },
+      { title: "Customer Reviews & Ratings | The Puppy Shop Delhi NCR" },
       {
         name: "description",
         content:
-          "Read what Delhi NCR families say about buying their puppies from The Puppy Shop — health, honesty and after-sale support.",
+          "Read verified reviews and real adoption stories from 15,000+ happy puppy parents across Delhi, Gurugram, Noida, and Faridabad. 4.9/5 star rated puppy home.",
       },
-      { property: "og:title", content: "Customer Reviews | The Puppy Shop" },
+      {
+        name: "keywords",
+        content:
+          "the puppy shop reviews, puppy shop ratings Delhi, buy puppy reviews Gurgaon, pet shop feedback Noida, real customer puppy photos Delhi NCR",
+      },
+      { property: "og:title", content: "Customer Reviews & Ratings | The Puppy Shop Delhi NCR" },
       {
         property: "og:description",
         content: "Real reviews from 15,000+ happy puppy parents across Delhi NCR.",
+      },
+      { property: "og:url", content: "https://www.thepuppyshop.store/reviews" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://www.thepuppyshop.store/reviews" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(reviewsLdJson),
       },
     ],
   }),

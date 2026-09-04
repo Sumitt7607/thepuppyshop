@@ -17,7 +17,7 @@ export function BreedCard({ breed, phone = "+919625796546" }: BreedCardProps) {
       <div className="relative aspect-square w-full overflow-hidden bg-white">
         <img
           src={breed.image}
-          alt={`${breed.name} puppy for sale`}
+          alt={`${breed.name} puppy for sale in Delhi NCR`}
           loading="lazy"
           width={400}
           height={400}

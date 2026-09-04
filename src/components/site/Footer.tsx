@@ -113,8 +113,18 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Delhi NCR Local SEO Locations Banner */}
+        <div className="mt-10 border-t border-white/10 pt-8">
+          <h4 className="font-display text-xs font-extrabold text-[#ff8a00] uppercase tracking-wider">
+            Puppies Available Across Delhi NCR Locations:
+          </h4>
+          <p className="mt-2 text-[11px] leading-relaxed text-white/70">
+            Delhi • New Delhi • South Delhi • Hauz Khas • Saket • Greater Kailash • Vasant Kunj • Dwarka • Rohini • Punjabi Bagh • Janakpuri • Gurugram / Gurgaon • Sector 29 • Golf Course Road • DLF Phase 1-5 • Sohna Road • Cyber City • Noida • Sector 18 Noida • Sector 62 Noida • Noida Expressway • Greater Noida • Faridabad • Ghaziabad • Indirapuram • Vaishali
+          </p>
+        </div>
+
         {/* Bottom copyright line */}
-        <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-white/60">
+        <div className="mt-8 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-white/60">
           <p>© {new Date().getFullYear()} The Puppy Shop. All Rights Reserved.</p>
           <p>
             Powered by{" "}

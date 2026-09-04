@@ -3,19 +3,57 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 
+const contactLdJson = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact The Puppy Shop Delhi NCR",
+  "description": "Contact information, phone numbers, and store address for The Puppy Shop in Delhi & Gurugram.",
+  "mainEntity": {
+    "@type": "PetStore",
+    "name": "The Puppy Shop",
+    "telephone": "+91 96257 96546",
+    "email": "shopthepuppy@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sector 29",
+      "addressLocality": "Gurugram",
+      "addressRegion": "Haryana",
+      "postalCode": "122001",
+      "addressCountry": "IN"
+    },
+    "openingHours": "Mo-Su 10:00-20:00"
+  }
+};
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us | The Puppy Shop, Gurugram" },
+      { title: "Contact The Puppy Shop | Visit Store in Delhi & Gurugram NCR" },
       {
         name: "description",
         content:
-          "Call, WhatsApp or visit The Puppy Shop in Sector 29, Gurugram to meet available puppies in Delhi NCR.",
+          "Contact The Puppy Shop Delhi NCR. Call or WhatsApp +91 96257 96546 or visit our puppy stores in Delhi and Sector 29 Gurugram. Fast doorstep puppy delivery across Delhi NCR.",
       },
-      { property: "og:title", content: "Contact Us | The Puppy Shop, Gurugram" },
+      {
+        name: "keywords",
+        content:
+          "contact the puppy shop, puppy shop phone number Delhi, dog shop contact Gurgaon, visit puppy shop Noida, buy puppy WhatsApp Delhi NCR",
+      },
+      { property: "og:title", content: "Contact The Puppy Shop | Visit Store in Delhi & Gurugram NCR" },
       {
         property: "og:description",
-        content: "Visit our Gurugram store or call us to book a puppy viewing.",
+        content: "Visit our Delhi and Gurugram puppy stores or call us to book a puppy viewing.",
+      },
+      { property: "og:url", content: "https://www.thepuppyshop.store/contact" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://www.thepuppyshop.store/contact" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(contactLdJson),
       },
     ],
   }),

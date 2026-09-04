@@ -1,10 +1,29 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2, HeartHandshake, ShieldCheck, Stethoscope, Star, BadgeCheck, Phone, Award, Sparkles } from "lucide-react";
+import {
+  CheckCircle2,
+  HeartHandshake,
+  ShieldCheck,
+  Stethoscope,
+  Star,
+  BadgeCheck,
+  Phone,
+  Award,
+  Sparkles,
+  MapPin,
+  Truck,
+  HelpCircle,
+} from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { CustomerSlider } from "@/components/site/CustomerSlider";
 import { BreedCard } from "@/components/site/BreedCard";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 import { breeds, reviews } from "@/components/site/data";
 import customer1 from "@/assets/customer-1.jpg";
@@ -60,19 +79,91 @@ const categoryBanners = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I buy a puppy in Delhi NCR from The Puppy Shop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can browse our available puppies online or call/WhatsApp us at +91 96257 96546. You can visit our store in Gurugram or Delhi to meet the puppies in person, or request safe climate-controlled doorstep delivery anywhere across Delhi NCR."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are all puppies vaccinated, dewormed, and KCI registered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Every puppy from The Puppy Shop is 100% vet-checked, dewormed, vaccinated, and comes with a written health guarantee and genuine Kennel Club of India (KCI) pedigree paperwork."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide same-day home delivery for puppies in Delhi, Gurgaon, and Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide safe, sanitized, and climate-controlled home delivery right to your doorstep across all sectors in Delhi, Gurugram, Noida, Greater Noida, Faridabad, and Ghaziabad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which dog breeds are best for Delhi NCR apartments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Top apartment-friendly breeds in Delhi NCR include Shih Tzu, Toy Poodle, Maltipoo, Bichon Frise, French Bulldog, and Cavalier King Charles Spaniel due to their compact size, friendly temperament, and low shedding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What health guarantee and vet support do you provide after purchase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide a comprehensive written health guarantee, free 1st-year veterinary consultation support, diet and vaccination charts, and lifetime guidance on nutrition and training."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I visit your pet store in Delhi NCR to interact with the puppies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our puppy centers in Sector 29 Gurugram and Delhi are open every day from 10:00 AM to 8:00 PM. We welcome families to meet and play with the puppies before adopting."
+      }
+    }
+  ]
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Puppies for Sale in Delhi NCR | The Puppy Shop" },
+      { title: "Buy Puppies in Delhi NCR | Top Pet Shop in Delhi & Gurgaon - The Puppy Shop" },
       {
         name: "description",
         content:
-          "Buy healthy, vet-checked puppies in Delhi NCR. 25+ breeds, KCI papers, free first-year vet support. Trusted by 15,000+ families.",
+          "Buy healthy, KCI registered & vet-checked puppies in Delhi NCR. 25+ pure breeds including Shih Tzu, Toy Poodle, Golden Retriever & Beagle with free 1st-year vet support and doorstep delivery across Delhi, Gurgaon, Noida & Faridabad.",
       },
-      { property: "og:title", content: "Puppies for Sale in Delhi NCR | The Puppy Shop" },
+      {
+        name: "keywords",
+        content:
+          "buy puppies in Delhi NCR, puppies for sale in Delhi, best puppy pet shop Delhi, dog shop in Gurgaon, puppy shop Noida, buy Shih Tzu in Delhi, Golden Retriever puppy Delhi NCR, Toy Poodle puppy Gurgaon, KCI certified puppies Delhi, ethical dog breeders Delhi NCR",
+      },
+      { property: "og:title", content: "Buy Puppies in Delhi NCR | Top Pet Shop in Delhi & Gurgaon" },
       {
         property: "og:description",
-        content: "Healthy, vaccinated puppies from Delhi NCR's most loved puppy home.",
+        content:
+          "Delhi NCR's #1 trusted home for healthy, vaccinated, KCI registered puppies with 100% health guarantee and home delivery across Delhi, Gurgaon, and Noida.",
+      },
+      { property: "og:url", content: "https://www.thepuppyshop.store/" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://www.thepuppyshop.store/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(faqSchema),
       },
     ],
   }),
@@ -393,6 +484,143 @@ function Index() {
       </section>
 
 
+
+      {/* Delhi NCR Coverage & Doorstep Delivery Hubs */}
+      <section className="bg-slate-50/80 py-16 border-y border-border/60">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-lime/20 px-3.5 py-1 text-xs font-black uppercase text-lime-dark tracking-wider">
+              <Truck className="h-3.5 w-3.5" /> Doorstep Delivery & Store Visits
+            </span>
+            <h2 className="mt-3 font-display text-3xl font-black text-ink md:text-4xl">
+              Buy Puppies in <span className="text-[#2b7ca9]">Delhi NCR</span> & Surrounding Areas
+            </h2>
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              We offer safe, climate-controlled puppy delivery and welcome in-person visits to our puppy facilities across Delhi NCR.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                region: "South & Central Delhi",
+                areas: "Greater Kailash, Saket, Vasant Kunj, Hauz Khas, Defence Colony, South Ext, Connaught Place, Chanakyapuri",
+                tag: "Same Day Delivery",
+              },
+              {
+                region: "Gurugram / Gurgaon",
+                areas: "Sector 29, Golf Course Road, DLF Phase 1-5, Sohna Road, Cyber City, Sushant Lok, Nirvana Country",
+                tag: "Physical Store & Viewing",
+              },
+              {
+                region: "Noida & Greater Noida",
+                areas: "Sector 18, Sector 50, Sector 62, Sector 137, Noida Expressway, Greater Noida West, Gaur City",
+                tag: "Doorstep Delivery",
+              },
+              {
+                region: "West & North Delhi",
+                areas: "Dwarka, Punjabi Bagh, Rohini, Pitampura, Janakpuri, Rajouri Garden, Paschim Vihar, Model Town",
+                tag: "Express Delivery",
+              },
+              {
+                region: "Faridabad & Ghaziabad",
+                areas: "Sector 15 Faridabad, Green Field, Surajkund, Indirapuram, Vaishali, Vasundhara, Raj Nagar Extension",
+                tag: "Safe Transit Delivery",
+              },
+              {
+                region: "All Delhi NCR Districts",
+                areas: "Complete vaccination certificates, KCI pedigree, microchip, and initial puppy starter kit included.",
+                tag: "100% Health Guarantee",
+              },
+            ].map((hub, i) => (
+              <div
+                key={i}
+                className="rounded-2xl border border-border bg-card p-5 shadow-xs transition-all duration-300 hover:border-[#2b7ca9]/50 hover:shadow-md"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-[#2b7ca9] shrink-0" />
+                    <h3 className="font-display text-base font-extrabold text-ink">{hub.region}</h3>
+                  </div>
+                  <span className="rounded-md bg-lime/20 px-2 py-0.5 text-[10px] font-extrabold text-lime-dark uppercase">
+                    {hub.tag}
+                  </span>
+                </div>
+                <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed">
+                  {hub.areas}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions (FAQ) Section for Delhi NCR */}
+      <section className="bg-background py-16">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-soft px-3.5 py-1 text-xs font-black uppercase text-pink-deep tracking-wider">
+              <HelpCircle className="h-3.5 w-3.5" /> Got Questions?
+            </span>
+            <h2 className="mt-3 font-display text-3xl font-black text-ink md:text-4xl">
+              Frequently Asked Questions About <span className="text-[#2b7ca9]">Buying Puppies in Delhi NCR</span>
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Everything you need to know about puppy adoption, health certifications, and delivery in Delhi NCR.
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <Accordion type="single" collapsible className="w-full space-y-3">
+              {[
+                {
+                  id: "faq-1",
+                  q: "How can I buy a puppy in Delhi NCR from The Puppy Shop?",
+                  a: "You can browse our available puppies on our website or contact us directly via Phone / WhatsApp at +91 96257 96546. You can visit our store in Sector 29 Gurugram or Delhi to meet the puppies in person, or request safe climate-controlled doorstep delivery anywhere across Delhi NCR.",
+                },
+                {
+                  id: "faq-2",
+                  q: "Are all puppies vaccinated, dewormed, and KCI registered?",
+                  a: "Yes! Every puppy from The Puppy Shop is 100% vet-checked, dewormed, and given age-appropriate vaccinations. We provide genuine Kennel Club of India (KCI) pedigree documentation, microchip verification, and a comprehensive health guarantee card.",
+                },
+                {
+                  id: "faq-3",
+                  q: "Do you provide same-day home delivery for puppies in Delhi, Gurgaon, and Noida?",
+                  a: "Yes, we provide safe, sanitized, and climate-controlled home delivery right to your doorstep across all sectors in Delhi, Gurugram, Noida, Greater Noida, Faridabad, and Ghaziabad.",
+                },
+                {
+                  id: "faq-4",
+                  q: "Which dog breeds are best for Delhi NCR apartments?",
+                  a: "Top apartment-friendly breeds in Delhi NCR include Shih Tzu, Toy Poodle, Maltipoo, Bichon Frise, French Bulldog, and Cavalier King Charles Spaniel due to their compact size, affectionate temperament, and low shedding habits.",
+                },
+                {
+                  id: "faq-5",
+                  q: "What health guarantee and vet support do you provide after purchase?",
+                  a: "We provide a written health guarantee, free 1st-year veterinary consultation support, diet and vaccination schedules, and lifetime guidance for your puppy's grooming and nutrition.",
+                },
+                {
+                  id: "faq-6",
+                  q: "Can I visit your pet store in Delhi NCR to interact with the puppies?",
+                  a: "Yes, our puppy centers in Sector 29 Gurugram and Delhi are open every day from 10:00 AM to 8:00 PM. We invite you and your family to meet, cuddle, and choose your puppy in a clean and safe environment.",
+                },
+              ].map((item) => (
+                <AccordionItem
+                  key={item.id}
+                  value={item.id}
+                  className="rounded-2xl border border-border bg-card px-5 shadow-xs data-[state=open]:border-[#2b7ca9]/50"
+                >
+                  <AccordionTrigger className="py-4 text-left font-display text-base font-extrabold text-ink hover:no-underline hover:text-[#2b7ca9]">
+                    {item.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 text-sm text-muted-foreground leading-relaxed">
+                    {item.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="bg-lime">

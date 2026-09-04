@@ -1,0 +1,16 @@
+{
+  "name": "The Puppy Shop Delhi NCR",
+  "short_name": "ThePuppyShop",
+  "description": "Buy healthy, KCI registered & vet-checked puppies in Delhi NCR.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#84cc16",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
