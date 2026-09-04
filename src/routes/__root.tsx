@@ -176,6 +176,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "buy puppies in Delhi NCR, puppies for sale Delhi, puppy pet shop in Delhi, dog shop Gurgaon, puppy for sale Noida, buy Shih Tzu Delhi, Golden Retriever puppy Delhi, Toy Poodle Delhi NCR, KCI registered puppies Delhi, ethical dog breeders Delhi NCR",
       },
       { name: "author", content: "The Puppy Shop" },
+      { name: "google-site-verification", content: "googleb32bce7c05ea3e77" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "geo.region", content: "IN-DL" },
       { name: "geo.placename", content: "Delhi NCR, Gurugram, Noida, New Delhi" },
