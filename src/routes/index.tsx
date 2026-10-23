@@ -566,7 +566,7 @@ function Index() {
               Frequently Asked Questions About <span className="text-[#2b7ca9]">Buying Puppies in Delhi NCR</span>
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Everything you need to know about puppy adoption, health certifications, and delivery in Delhi NCR.
+              Everything you need to know about buying a puppy, health certifications, and delivery in Delhi NCR.
             </p>
           </div>
 

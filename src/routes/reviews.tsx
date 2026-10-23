@@ -39,7 +39,7 @@ export const Route = createFileRoute("/reviews")({
       {
         name: "description",
         content:
-          "Read verified reviews and real adoption stories from 15,000+ happy puppy parents across Delhi, Gurugram, Noida, and Faridabad. 4.9/5 star rated puppy home.",
+          "Read verified reviews and real success stories from 15,000+ happy puppy parents across Delhi, Gurugram, Noida, and Faridabad. 4.9/5 star rated puppy home.",
       },
       {
         name: "keywords",

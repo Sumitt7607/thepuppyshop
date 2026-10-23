@@ -126,17 +126,7 @@ export function Footer() {
         {/* Bottom copyright line */}
         <div className="mt-8 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-white/60">
           <p>© {new Date().getFullYear()} The Puppy Shop. All Rights Reserved.</p>
-          <p>
-            Powered by{" "}
-            <a
-              href="https://nexcoretech.online"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-[#ff8a00] hover:underline transition-colors"
-            >
-              NexcoreTechnologies
-            </a>
-          </p>
+
         </div>
       </div>
     </footer>
