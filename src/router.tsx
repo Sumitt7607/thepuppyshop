@@ -12,5 +12,18 @@ export const getRouter = () => {
     defaultPreloadStaleTime: 0,
   });
 
+  const origGetMatchedRoutes = router.getMatchedRoutes.bind(router);
+  router.getMatchedRoutes = ((pathname: string) => {
+    const res = origGetMatchedRoutes(pathname) as any;
+    if (res && typeof res === "object" && !res[Symbol.iterator]) {
+      res[Symbol.iterator] = function* () {
+        yield res.matchedRoutes;
+        yield res.routeParams;
+        yield res.foundRoute;
+      };
+    }
+    return res;
+  }) as typeof router.getMatchedRoutes;
+
   return router;
 };

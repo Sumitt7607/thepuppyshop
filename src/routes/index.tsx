@@ -295,9 +295,8 @@ function Index() {
                 return (
                   <div
                     key={idx}
-                    className={`group flex items-start gap-3.5 rounded-2xl border border-border/70 bg-card p-4 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#2b7ca9]/40 hover:shadow-md ${
-                      item.fullWidth ? "sm:col-span-2" : ""
-                    }`}
+                    className={`group flex items-start gap-3.5 rounded-2xl border border-border/70 bg-card p-4 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#2b7ca9]/40 hover:shadow-md ${item.fullWidth ? "sm:col-span-2" : ""
+                      }`}
                   >
                     <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl font-extrabold ${item.color} transition-transform duration-300 group-hover:scale-110`}>
                       <IconComp className="h-5 w-5" />
